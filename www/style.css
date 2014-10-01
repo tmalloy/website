@@ -1,4 +1,8 @@
 
+body {
+    background-color: #00A4C4;
+}
+
 div.full_height {
     height: 80%;
     width: 100%;
@@ -11,16 +15,25 @@ div.child {
 }
 
 h1 {
-    font-family: "arial";
+    /*font-family: "arial";*/
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     font-size: 8em;
+    color: #F5F5F5;
 }
 
 h2 {
-    font-family: "arial";
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    /*font-family: "arial";*/
     font-size: 4em;
+    color: #F5F5F5;
 }
 
 h3 {
-    font-family: "arial";
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    /*font-family: "arial";*/
     font-size: 2.5em;
+    color: #F5F5F5;
 }
