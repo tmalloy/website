@@ -1,0 +1,26 @@
+
+div.full_height {
+    height: 80%;
+    width: 100%;
+    text-align: center;
+    padding: 5% 0;
+}
+
+div.child {
+    padding: 10% 0;
+}
+
+h1 {
+    font-family: "arial";
+    font-size: 8em;
+}
+
+h2 {
+    font-family: "arial";
+    font-size: 4em;
+}
+
+h3 {
+    font-family: "arial";
+    font-size: 2.5em;
+}
