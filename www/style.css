@@ -4,14 +4,14 @@ body {
 }
 
 div.full_height {
-    height: 80%;
+    height: 95%;
     width: 100%;
     text-align: center;
     padding: 5% 0;
 }
 
-div.child {
-    padding: 10% 0;
+div.push_down {
+    padding-top: 20%;
 }
 
 h1 {
