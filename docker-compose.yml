@@ -1,0 +1,17 @@
+version: '2'
+services:
+
+    www:
+        build: ./image
+        image: website
+        networks:
+            global:
+              aliases:
+                - website
+
+networks:
+    global:
+        external:
+            name: global
+
+
