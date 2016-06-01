@@ -1,0 +1,28 @@
+
+
+/* 
+ * Prevent bootstrap from going to "xl" size which makes the car layout look
+ * too spaced out
+ */
+@media screen and (min-width: 75em) {
+    .container {
+        max-width: 940px;
+    }
+}
+
+/*
+ * Use flexbox to display our project cards. However to make sure that when
+ * they're centered when there's only one card on each row (e.g. on a phone or
+ * other narrow screen) we need two different flexbox settings.
+ */
+.project-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+@media screen and (min-width: 48em) {
+    .project-wrapper {
+        justify-content: space-between;
+    }
+}
+

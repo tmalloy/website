@@ -3,7 +3,6 @@ services:
 
     www:
         build: ./image
-        image: website
         networks:
             global:
               aliases:

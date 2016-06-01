@@ -1,35 +1,131 @@
-<html>
-    <!-- Hi Mom! -->
-    <head>
-        <link href='http://fonts.googleapis.com/css?family=Roboto:100,400' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Hello</title>
-    </head>
-    <body>
-        <div class="full_height">
-            <h1>Hello,</h1>
-            <h3>i'm Taylor</h3>
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <!-- jquery, bootstrap js needs it -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    
+    <link rel="stylesheet" href="css/tether-1.3.2.min.css">
+    <script src="js/tether-1.3.2.min.js"></script>
+
+    <!-- bootstrap css and js, v4 alpha2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- site css -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript">
+        $(function() {
+            // rot-encoded email address to confuse simple scrapers
+            var getPopoverContent = function() {
+                var decode = function(encodedString) {
+                    return encodedString.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+8)?c:c-26);});
+                };
+                return decode("zwddg@lsqdgjesddgq.uge");
+            };
+
+            var contactPopover = $('#contact-popover')
+            contactPopover.popover({
+                content: getPopoverContent,
+            })
+
+            // Had to do custom show-hide behavior because I wanted a mix of
+            // "focus" and "click" where a focus shows it but a click toggles
+            // even if it's still focused
+            contactPopover.focusout(function() {
+                contactPopover.popover('hide');
+            });
+            contactPopover.click(function() {
+                contactPopover.popover('toggle');
+            });
+
+            // Highlight the email address so it can be quickly copied.
+            contactPopover.on('shown.bs.popover', function () {
+                var newSelection = $('.popover-content').first()[0];
+                var selection = window.getSelection();
+                var range = document.createRange();
+                range.setStartBefore(newSelection);
+                range.setEndAfter(newSelection);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            });
+
+        });
+    </script>
+  </head>
+  <body style="min-height: 100%; height: 100%;">
+    <div style="height: 100%;">
+        <div style="min-height: 100%; height: auto !important; margin: 0 auto -250px">
+            <div class="jumbotron container" style="background-color: #FFF;"> 
+                <div class="row">
+                    <div class="col-md-12 center-block" style="text-align: center;">
+                        <h1 class="display-1">Hello</h1>
+                        <p class="lead">Welcome to my website. Please take a look around.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 250px;"></div>
         </div>
-        <div class="full_height">
-            <h3>first, I made this</h3>
-            <a href="http://www.letsembark.com">
-                <img style="max-height: 80%; max-width: 30%;" src="http://static.taylormalloy.com/nyc-chrome.png"></img>
-            </a>
-        </div>
-        <div class="full_height">
-            <div class="push_down">
-                <h3>now I work here</h3>
-                <a href="http://www.apple.com">
-                    <img style="max-height: 50%; max-width: 30%" src="http://static.taylormalloy.com/apple.png"></img>
-                </a>
+        <div style="height: 250px;">
+            <div class="container-fluid" style="min-height: 100%; height: 100%;">
+                <div class="row" style="min-height: 100%; height: 100%;">
+                    <div class="col-md-4 center-block bottom-row" style="background-color: #fff; height: 100%; text-align: center;"><!--D593FF-->
+                        <a href="http://dailyhn.taylormalloy.com">
+                            <div class="container" style="position: relative; top: 50%; transform: translateY(-50%);">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="images/dailyhnsmall.png" width="150" height="101" class="img-rounded"></img>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="lead" style="text-decoration: inherit; color: inherit;">Daily Hacker News</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 center-block bottom-row" style="background-color: #fff; height: 100%; text-align: center;"><!--E8807A-->
+                        <a href="projects.html">
+                            <div class="container" style="position: relative; top: 50%; transform: translateY(-50%);">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="images/projects.png" width="150" height="101" class="img-rounded"></img>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="lead" style="text-decoration: inherit; color: inherit;">Projects</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 center-block bottom-row" style="background-color: #fff; height: 100%; text-align: center;"><!--7AA8E8-->
+                        <a tabindex="0" id="contact-popover" role="button" href="javascript:void(0);" data-offset="-50px 0px" data-toggle="popover" data-trigger="manual" data-placement="top">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="images/emailsmall.png" width="136" height="101" class="img-rounded"></img>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="lead">Contact me</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="full_height">
-            <div class="push_down">
-                <h3>i'm also on github</h3>
-                <iframe src="http://ghbtns.com/github-btn.html?user=tmalloy&type=follow"
-                      allowtransparency="true" frameborder="0" scrolling="0" width="150" height="22"></iframe>
-            </div>
-        </div>
-    </body>
+    </div>
+  </body>
 </html>
+

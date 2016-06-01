@@ -1,0 +1,57 @@
+
+/*
+ * We don't want titles on our bootstrap popovers
+ */
+.popover-title {
+    display: none;
+}
+
+/*
+ * Make the contact-me popover a little bit bigger or else it lines up weirdly
+ * with the hr covering the bottom row
+ */
+.popover-content {
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+
+.bottom-row {
+    border-top: 1px solid #DDD;
+}
+
+.bottom-row a {
+    outline: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.bottom-row .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media screen and (min-width: 48em) {
+
+    /*
+     * Create the dividers between the items along the bottom row
+     */
+    .bottom-row:after {
+      content : "";
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      transform: translateY(-50%);
+      width  : 1px;
+      height   : 75%;
+      border-right:1px solid #ddd;
+    }
+
+    .bottom-row:last-child:after {
+      border-right: 0px;
+    }
+
+}
+

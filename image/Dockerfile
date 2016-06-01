@@ -1,16 +1,9 @@
-FROM ubuntu
+FROM nginx
 
 MAINTAINER Taylor Malloy
 
-RUN apt-get update
+RUN rm -rf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN apt-get install -y lighttpd
+COPY www /data/www
 
-RUN mkdir -p /data/
-ADD www /data/www
-
-ADD lighttpd.conf /etc/lighttpd/
-
-EXPOSE 80
-
-CMD lighttpd -D -f /etc/lighttpd/lighttpd.conf
